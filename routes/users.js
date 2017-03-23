@@ -10,7 +10,6 @@ module.exports = function(app, __users) {
 		if (!req.body) return res.sendStatus(400);
 		
 		// push body obj onto users array
-		// __users['users'].push(JSON.parse(req.body));
 		__users['users'].push(req.body);
 
 		// get uid from body object
@@ -37,7 +36,6 @@ module.exports = function(app, __users) {
 	app.patch('/users/:uid', jsonParser, function(req, res){
 		if (!req.body) return res.sendStatus(400);
 
-		// bodyObj = JSON.parse(req.body);
 
 		// get uid from body obj
 		var uid = Object.keys(req.body)[0];
